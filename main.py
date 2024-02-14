@@ -148,7 +148,7 @@ while True:
                     bot_point += 1
                 # But if the return is 0, then the round is Tie and no one get +1 point
                 elif result == 0:
-                    print("Tie🤝")
+                    print("This round is Draw🤝")
                     user_point += 0
                     bot_point += 0
                 # These below conditions are checking for winner
