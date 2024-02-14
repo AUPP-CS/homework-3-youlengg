@@ -89,7 +89,7 @@ print("┆     3️⃣  .Each round win get 1 point. Who get 3 points first will
 print("┆                                                                                                               ┆")
 print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
 
-user_name = input("📋  📋  📋 Enter your name: ")
+user_name = input("\n📋  📋  📋 Enter your name: ")
 
 
 #The first while True loop is to check if user wish to continue the game or they wish to stop
@@ -113,6 +113,7 @@ while True:
                 bot_point_ui = '''2️⃣'''
             print(f"\n🧑 {user_name}'s Point =", user_point_ui)
             print("🤖 Bot Point =", bot_point_ui)
+            print("\n➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
             print("\nEnter 0 for ROCK ✊, 1 for PAPER ✋, and 2 for SCISSORS ✌️")
             user_choice = int(input("Please select your choices: "))
             # The below if code is to check with the user's input
@@ -122,17 +123,17 @@ while True:
             # So if input is not a valid index then the code will print "Invalid input"
             if user_choice not in range(len(options)):
                 print("Invalid input ❌")
-            # But if input is in range then the code will continue to check what is the input and print out as the variable in the list base on user's input
+            # But if input is in range then the code will continue to check what is the input and print out as the Ui in the list(ROCK,PAPER<SCISSORS) base on user's input
             else:
                 print(options[user_choice])
                 print(f"{user_name}'s 🧑 :")
-                print("\n-------------------------------------")
+                print("\n----------------------------------------------------")
             # The randint function will random 3 numbers from 0,2 which is represent to Rock, Paper, Scissors same as user's choices
                 bot_choice = randint(0,2)
-                # Same here, as what the code check for user, we do the same to print out the choice that bot chose
+                # Same here, as what the code does for user, we do the same to print out the choice that bot chose
                 print(options[bot_choice])
                 print("Bot's 🤖:")
-                print("\n-------------------------------------")
+                print("\n----------------------------------------------------")
                 # Function Called to see who win or lose
                 result = rps_match(user_choice, bot_choice)
 
@@ -140,17 +141,18 @@ while True:
                 
                 # If the return is 1, then user will win the round and point will +1
                 if result == 1:
-                    print(f"🧑 {user_name} win this round ➕ 1️⃣")
+                    print(f"\n🧑 {user_name} win this round ➕ 1️⃣")
+                    print("\n----------------------------------------------------")
                     user_point += 1
                 # If the return is -1, then bot will win the round and point will +1    
                 elif result == -1:
-                    print("🤖 Bot win this round  ➕ 1️⃣")
+                    print("\n🤖 Bot win this round  ➕ 1️⃣")
+                    print("\n----------------------------------------------------")
                     bot_point += 1
                 # But if the return is 0, then the round is Tie and no one get +1 point
                 elif result == 0:
-                    print("This round is Draw🤝")
-                    user_point += 0
-                    bot_point += 0
+                    print("\nThis round is Draw🤝")
+                    print("\n----------------------------------------------------")
                 # These below conditions are checking for winner
                 # If someone got 3 point first, then they will win the game.
                 if user_point == 3:
